@@ -12,23 +12,26 @@ public class DBMain {
     @DatabaseField(id = true)
     public String login;
 
-    @DatabaseField(id = true)
+    @DatabaseField()
     public String password;
 
-    @DatabaseField(id = true, canBeNull = true)
+    @DatabaseField(canBeNull = true)
     public String name;
 
-    @DatabaseField(id = true, canBeNull = true)
+    @DatabaseField(canBeNull = true)
     public String midname;
 
-    @DatabaseField(id = true, canBeNull = true)
+    @DatabaseField(canBeNull = true)
     public String lastname;
 
-    @DatabaseField(id = true, canBeNull = true)
+    @DatabaseField(canBeNull = true)
     public String email;
 
-    @DatabaseField(id = true, canBeNull = true)
+    @DatabaseField(canBeNull = true)
     public String birthday;
+
+    public DBMain() {
+    }
 
     public DBMain(String login, String password) {
         this.login = login;

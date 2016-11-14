@@ -13,7 +13,6 @@ public class DBSingletone {
 
     public static void init(Context context) {
         databaseHelper = OpenHelperManager.getHelper(context, DBHelper.class);
-        databaseHelper.getWritableDatabase();
     }
 
     public static DBHelper getHelper(){
