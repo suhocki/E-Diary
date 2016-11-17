@@ -22,6 +22,10 @@ import android.widget.TextView;
 import com.example.hzkto.e_diary.AdminActivity;
 import com.example.hzkto.e_diary.R;
 import com.example.hzkto.e_diary.UserActivity;
+import com.example.hzkto.e_diary.database.DBMain;
+import com.example.hzkto.e_diary.database.DBSingletone;
+
+import java.sql.SQLException;
 
 import static com.example.hzkto.e_diary.MainActivity.getAppContext;
 
@@ -54,13 +58,13 @@ public class LoginFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_login, container, false);
-        mEmailView = (AutoCompleteTextView) view.findViewById(R.id.email);
+        mEmailView = (AutoCompleteTextView) view.findViewById(R.id.tv_login_text);
 
-        mPasswordView = (EditText) view.findViewById(R.id.password);
+        mPasswordView = (EditText) view.findViewById(R.id.tv_password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == R.id.login || id == EditorInfo.IME_NULL) {
+                if (id == R.id.tv_login_text || id == EditorInfo.IME_NULL) {
                     attemptLogin();
                     return true;
                 }
@@ -205,26 +209,42 @@ public class LoginFragment extends Fragment {
             }
 
             //  Проверка на входе
+            DBMain dbMain = new DBMain();
+            try {
+                dbMain = DBSingletone.getHelper().getDbMainDAO().queryForId(mLogin);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
 
-            for (String credential : ADMIN_CREDENTIALS) {
-                String[] pieces = credential.split(":");
-                if (pieces[0].equals(mLogin) && pieces[1].equals(mPassword)) {
-                    this.userType = "admin";
+            if (dbMain != null) {
+                if (dbMain.getPassword().equals(mPassword)) {
+                    this.userType = "user";
                     return true;
                 }
             }
 
-            for (String credential : USERS_CREDENTIALS) {
-                String[] pieces = credential.split(":");
-                if (pieces[0].equals(mLogin) && pieces[1].equals(mPassword)) {
-                    this.userType = "user";
-                    return true;
-                } else return false;
-            }
+
+            return false;
+
+//            for (String credential : ADMIN_CREDENTIALS) {
+//                String[] pieces = credential.split(":");
+//                if (pieces[0].equals(mLogin) && pieces[1].equals(mPassword)) {
+//                    this.userType = "admin";
+//                    return true;
+//                }
+//            }
+//
+//            for (String credential : USERS_CREDENTIALS) {
+//                String[] pieces = credential.split(":");
+//                if (pieces[0].equals(mLogin) && pieces[1].equals(mPassword)) {
+//                    this.userType = "user";
+//                    return true;
+//                } else return false;
+//            }
             // TODO: register the new account here.
 
 
-            return true;
+//            return true;
         }
 
         @Override
@@ -256,7 +276,6 @@ public class LoginFragment extends Fragment {
             showProgress(false);
         }
     }
-
 
 
 }

@@ -9,7 +9,7 @@ import com.j256.ormlite.support.ConnectionSource;
  * Created by hzkto on 11/10/2016.
  */
 
-public class DBMainDAO extends BaseDaoImpl<DBMain, Long> {
+public class DBMainDAO extends BaseDaoImpl<DBMain, String> {
     public void clear() {
         try {
             this.delete(this.queryForAll());

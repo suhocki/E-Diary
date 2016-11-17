@@ -11,12 +11,13 @@
     <string name="error_incorrect_password">Пароль неверный</string>
     <string name="error_field_required">Заполните необходимые поля</string>
     <string name="action_register">Регистрация</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Name">Имя</string>
     <string name="Midname">Отчество</string>
     <string name="Surname">Фамилия</string>
     <string name="email">Электронная почта</string>
     <string name="birthday">День рождения</string>
+    <string name="user">Пользователь</string>
+    <string name="successfullyCreated">успешно создан</string>
+    <string name="writeError">Произошла ошибка записи, попробуйте еще раз</string>
 </resources>

@@ -29,7 +29,8 @@
                     android:hint="@string/login"
                     android:inputType="text"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:id="@+id/fragmentRegister_tvLogin" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -38,11 +39,11 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/password"
+                    android:id="@+id/fragmentRegister_tvPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_password"
-                    android:imeActionId="@+id/login"
+                    android:imeActionId="@+id/tv_login_text"
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
@@ -62,7 +63,8 @@
                     android:hint="@string/Name"
                     android:inputType="textPersonName"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:id="@+id/fragmentRegister_tvName" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -77,7 +79,8 @@
                     android:hint="@string/Midname"
                     android:inputType="textPersonName"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:id="@+id/fragmentRegister_tvMidname" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -92,7 +95,8 @@
                     android:hint="@string/Surname"
                     android:inputType="textPersonName"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:id="@+id/fragmentRegister_tvLastname" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -107,7 +111,8 @@
                     android:hint="@string/email"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:id="@+id/fragmentRegister_tvEmail" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -122,13 +127,14 @@
                     android:hint="@string/birthday"
                     android:inputType="date"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:id="@+id/fragmentRegister_tvBirthday" />
 
             </android.support.design.widget.TextInputLayout>
 
 
             <Button
-                android:id="@+id/btnRegister"
+                android:id="@+id/fragmentRegister_btnRegister"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

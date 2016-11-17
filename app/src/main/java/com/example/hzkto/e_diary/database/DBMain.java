@@ -10,25 +10,25 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable()
 public class DBMain {
     @DatabaseField(id = true)
-    public String login;
+    private String login;
 
     @DatabaseField()
-    public String password;
+    private String password;
 
     @DatabaseField(canBeNull = true)
-    public String name;
+    private String name;
 
     @DatabaseField(canBeNull = true)
-    public String midname;
+    private String midname;
 
     @DatabaseField(canBeNull = true)
-    public String lastname;
+    private String lastname;
 
     @DatabaseField(canBeNull = true)
-    public String email;
+    private String email;
 
     @DatabaseField(canBeNull = true)
-    public String birthday;
+    private String birthday;
 
     public DBMain() {
     }
@@ -46,5 +46,37 @@ public class DBMain {
         this.lastname = lastname;
         this.email = email;
         this.birthday = birthday;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setMidname(String midname) {
+        this.midname = midname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getPassword() {
+        return password;
     }
 }
