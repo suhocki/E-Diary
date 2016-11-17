@@ -42,11 +42,11 @@ public class RegisterFragment extends Fragment {
                 if (checkRegisterFields()) {
                     try {
                         saveUser();
+                        toastAnswer = getString(R.string.user) + " " + tvName.getText() + " " + getString(R.string.successfullyCreated);
+                        getActivity().onBackPressed();
                     } catch (SQLException e) {
                         e.printStackTrace();
                         toastAnswer = getString(R.string.writeError);
-                    } finally {
-                        toastAnswer = getString(R.string.user) + " " + tvName.getText() + " " + getString(R.string.successfullyCreated);
                     }
                     Toast.makeText(context, toastAnswer, Toast.LENGTH_SHORT).show();
                 } else {

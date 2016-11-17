@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content">
 
                 <AutoCompleteTextView
-                    android:id="@+id/tv_login_text"
+                    android:id="@+id/fragmentLogin_tvLogin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/login"
@@ -50,11 +50,10 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/tv_password"
+                    android:id="@+id/fragmentLogin_tvPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_password"
-                    android:imeActionId="@+id/tv_login_text"
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
@@ -64,7 +63,7 @@
             </android.support.design.widget.TextInputLayout>
 
             <Button
-                android:id="@+id/btnLogin"
+                android:id="@+id/fragmentLogin_btnLogin"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -73,7 +72,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/btnRegister"
+                android:id="@+id/fragmentLogin_btnRegister"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

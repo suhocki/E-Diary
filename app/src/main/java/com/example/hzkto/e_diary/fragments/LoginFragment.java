@@ -58,13 +58,13 @@ public class LoginFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_login, container, false);
-        mEmailView = (AutoCompleteTextView) view.findViewById(R.id.tv_login_text);
+        mEmailView = (AutoCompleteTextView) view.findViewById(R.id.fragmentLogin_tvLogin);
 
-        mPasswordView = (EditText) view.findViewById(R.id.tv_password);
+        mPasswordView = (EditText) view.findViewById(R.id.fragmentLogin_tvPassword);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == R.id.tv_login_text || id == EditorInfo.IME_NULL) {
+                if (id == R.id.fragmentLogin_tvLogin || id == EditorInfo.IME_NULL) {
                     attemptLogin();
                     return true;
                 }
@@ -72,14 +72,14 @@ public class LoginFragment extends Fragment {
             }
         });
 
-        Button btnLogin = (Button) view.findViewById(R.id.btnLogin);
+        Button btnLogin = (Button) view.findViewById(R.id.fragmentLogin_btnLogin);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 attemptLogin();
             }
         });
-        Button btnRegister = (Button) view.findViewById(R.id.btnRegister);
+        Button btnRegister = (Button) view.findViewById(R.id.fragmentLogin_btnRegister);
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -218,6 +218,10 @@ public class LoginFragment extends Fragment {
 
             if (dbMain != null) {
                 if (dbMain.getPassword().equals(mPassword)) {
+                    if (mLogin.equals("admin")) {
+                        this.userType = "admin";
+                        return true;
+                    }
                     this.userType = "user";
                     return true;
                 }

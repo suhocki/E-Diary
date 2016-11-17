@@ -19,5 +19,5 @@
     <string name="birthday">День рождения</string>
     <string name="user">Пользователь</string>
     <string name="successfullyCreated">успешно создан</string>
-    <string name="writeError">Произошла ошибка записи, попробуйте еще раз</string>
+    <string name="writeError">Логин занят</string>
 </resources>
