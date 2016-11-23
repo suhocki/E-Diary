@@ -3,9 +3,6 @@
     android:id="@+id/fragmentRegister_scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
-    android:layout_marginTop="24dp"
     tools:context="com.example.hzkto.e_diary.fragments.RegisterFragment">
 
 
@@ -13,6 +10,7 @@
         android:id="@+id/email_login_form"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
         android:orientation="vertical"
         android:scrollbarStyle="outsideOverlay">
 
@@ -28,7 +26,8 @@
                 android:hint="@string/login"
                 android:inputType="text"
                 android:maxLines="1"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:imeOptions="actionNext" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -41,9 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/prompt_password"
-                android:imeActionId="@+id/fragmentLogin_tvLogin"
-                android:imeActionLabel="@string/action_sign_in_short"
-                android:imeOptions="actionUnspecified"
+                android:imeOptions="actionNext"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:singleLine="true" />
@@ -62,7 +59,8 @@
                 android:hint="@string/Name"
                 android:inputType="textPersonName"
                 android:maxLines="1"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:imeOptions="actionNext" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -78,7 +76,8 @@
                 android:hint="@string/Midname"
                 android:inputType="textPersonName"
                 android:maxLines="1"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:imeOptions="actionNext" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -94,7 +93,8 @@
                 android:hint="@string/Surname"
                 android:inputType="textPersonName"
                 android:maxLines="1"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:imeOptions="actionNext" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -110,7 +110,8 @@
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:imeOptions="actionNext" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -126,7 +127,9 @@
                 android:hint="@string/birthday"
                 android:inputType="date"
                 android:maxLines="1"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:imeActionLabel="@string/action_register"
+                android:imeOptions="actionUnspecified" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -138,6 +141,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Зарегистрироваться"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/fragmentRegister_btnBack"
+            style="?android:textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Назад"
             android:textStyle="bold" />
 
     </LinearLayout>

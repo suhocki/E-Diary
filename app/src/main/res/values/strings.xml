@@ -5,7 +5,6 @@
     <string name="login">Логин</string>
     <string name="prompt_password">Пароль</string>
     <string name="action_sign_in">Вход</string>
-    <string name="action_sign_in_short">ВХОД</string>
     <string name="error_invalid_email">Логин неверный</string>
     <string name="error_invalid_password">Пароль слишком короткий</string>
     <string name="error_incorrect_password">Пароль неверный</string>

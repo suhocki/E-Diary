@@ -4,9 +4,11 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +25,7 @@ public class RegisterFragment extends Fragment {
     Button btnRegister;
     Context context;
     String toastAnswer;
+    private Button btnBack;
 
     public RegisterFragment() {
         // Required empty public constructor
@@ -36,6 +39,16 @@ public class RegisterFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_register, null);
         this.context = getContext();
         initView(v);
+        tvBirthday.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == R.id.fragmentRegister_tvBirthday || actionId == EditorInfo.IME_NULL) {
+                    btnRegister.callOnClick();
+                    return true;
+                }
+                return false;
+            }
+        });
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,6 +92,12 @@ public class RegisterFragment extends Fragment {
                 return true;
             }
         });
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().popBackStack();
+            }
+        });
         return v;
     }
 
@@ -91,6 +110,7 @@ public class RegisterFragment extends Fragment {
         tvEmail = (TextView) v.findViewById(R.id.fragmentRegister_tvEmail);
         tvBirthday = (TextView) v.findViewById(R.id.fragmentRegister_tvBirthday);
         btnRegister = (Button) v.findViewById(R.id.fragmentRegister_btnRegister);
+        btnBack = (Button) v.findViewById(R.id.fragmentRegister_btnBack);
     }
 
 }
